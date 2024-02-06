@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #navbar {
+            background: linear-gradient(to right, #2b5876, #4e4376);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar #profileLogo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 190px;
+            height: 254px;
+            border-radius: 20px;
+            background-size: cover;
+            position: relative;
+            padding: 1.8rem;
+            border: 2px solid #c3c6ce;
+            transition: 0.5s ease-out;
+            overflow: visible;
+            margin-bottom: 20px; 
+        }
+
+        .card-details {
+            color: white; 
+            height: 100%;
+            gap: 0.5em;
+            display: grid;
+            place-content: center;
+        }
+
+        .card-button {
+            transform: translate(-50%, 125%);
+            width: 60%;
+            border-radius: 1rem;
+            border: none;
+            background-color: #008bf8;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            opacity: 0;
+            transition: 0.3s ease-out;
+        }
+
+        .text-body {
+            color: rgb(134, 134, 134);
+        }
+
+        .text-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            border-color: #008bf8;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover .card-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+        /* Different background images for each card */
+        .card:nth-child(1) {
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(pic/3.jpg);
+        }
+
+        .card:nth-child(2) {
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(pic/3.jpg);
+        }
+
+        .card:nth-child(3) {
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(pic/3.jpg);
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --color: rgba(30, 30, 30);
+  --bgColor: rgba(245, 245, 245);
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--color);
+  background: var(--bgColor);
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+ul::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: rgb(225, 225, 225);
+  border-radius: calc(var(--line-w) / 2);
+}
+
+ul li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+ul li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+ul li .date {
+  --dateH: 3rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
+
+  text-align: center;
+  background-color: var(--accent-color);
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+ul li .date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+ul li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+ul li .title,
+ul li .descr {
+  background: var(--bgColor);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+ul li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+}
+ul li .descr {
+  padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+ul li .title::before,
+ul li .descr::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+ul li .title::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+ul li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  ul {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  ul::before {
+    grid-column: 2;
+  }
+  ul li:nth-child(odd) {
+    grid-column: 1;
+  }
+  ul li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  ul li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  ul li:nth-child(odd) .date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  ul li:nth-child(odd) .date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  ul li:nth-child(odd) .date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+  }
+}
+
+.credits {
+  margin-top: 1rem;
+  text-align: right;
+}
+.credits a {
+  color: var(--color);
+}
+
+
+ul li .title,
+        ul li .descr {
+            display: none; 
+            transition: opacity 10s ease; 
+            opacity: 0; 
+        }
+
+        ul li:hover .title,
+        ul li:hover .descr {
+            display: block; 
+            opacity: 1; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <a href="#" onclick="showContent('Home')">🏠 Home</a>
+        <a href="#" onclick="showContent('Status')">📈 Status</a>
+        <a href="#" onclick="showContent('Email')">📧 Email</a>
+        <img id="profileLogo" src="pic/Ar.png" alt="Profile Logo" onclick="togglePopup()">
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-details">
+                <p class="text-title">HTML</p>
+                <p class="text-body">click to continue your journey</p>
+            </div>
+            <button class="card-button" onclick="openNewPage('login3.html')">click</button>
+        </div>
+
+        <div class="card">
+            <div class="card-details">
+                <p class="text-title">Reactjs</p>
+                <p class="text-body">click to continue your journey</p>
+            </div>
+            <button class="card-button" onclick="openNewPage('login3.html')">Click</button>
+        </div>
+
+        <div class="card">
+            <div class="card-details">
+                <p class="text-title">PHP</p>
+                <p class="text-body">click to continue your journey</p>
+            </div>
+            <button class="card-button" onclick="openNewPage('login3.html')">Click</button>
+        </div>
+    </div>
+
+    <h1>Internship-Time-period</h1>
+    <ul>
+        <li style="--accent-color:#41516C">
+            <div class="date">First-month</div>
+            <div class="title">Project</div>
+            <div class="descr">Time duration</div>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">Second-Month</div>
+            <div class="title">Project</div>
+            <div class="descr">Time duration</div>
+        </li>
+        <li style="--accent-color:#E24A68">
+            <div class="date">Third-Month</div>
+            <div class="title">Project</div>
+            <div class="descr">Time duration</div>
+        </li>
+        <li style="--accent-color:#1B5F8C">
+            <div class="date">Final-Project</div>
+            <div class="title">AMAZON-CLONE</div>
+            <div class="descr">Done</div>
+        </li>
+    </ul>
+    <script>
+        function openNewPage(url) {
+            window.location.href = url;
+        }
+    </script>
+
+    
+</body>
+</html>

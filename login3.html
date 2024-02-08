@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Web Page</title>
+    <title>Your Web Page</title>
 
     <style>
         body {
@@ -27,11 +27,11 @@
             animation: colorChange 8s infinite;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            border-bottom-left-radius: 15px; 
-            border-bottom-right-radius: 15px; 
-            position: fixed;
-            width: 100%; 
-            top: 0; 
+            border-bottom-left-radius: 15px; /* Added for semi-square shape */
+            border-bottom-right-radius: 15px; /* Added for semi-square shape */
+            position: fixed; /* Position navbar fixed at the top */
+            width: 100%; /* Full width */
+            top: 0; /* Align to the top of the viewport */
         }
 
         @keyframes colorChange {
@@ -59,7 +59,7 @@
             padding: 15px;
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            animation: fadeInUp 0.7s ease-out;
+            animation: fadeInUp 0.7s ease-out; /* Added animation for links */
         }
 
         @keyframes fadeInUp {
@@ -79,15 +79,15 @@
         }
 
         nav a.active {
-            font-weight: bold; 
+            font-weight: bold; /* Make the active links bold */
         }
 
         nav a:not(.active) {
-            opacity: 0.7; 
+            opacity: 0.7; /* Reduce opacity for non-active links */
         }
 
         nav a:not(:last-child) {
-            margin-right: 15px; 
+            margin-right: 15px; /* Adjust spacing between links */
         }
 
         #container {
@@ -105,23 +105,68 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #fdfdfd;
+            background-color: #c12fd4;
             overflow: hidden;
             margin-left: auto;
             cursor: pointer;
-            position: relative; 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+            position: relative; /* Add position relative for absolute positioning */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         }
 
         #logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease; /* Add transition for smooth hover effect */
         }
 
         #logo:hover img {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Add a slight scale effect on hover */
+        }
+
+        /* Popup Bar Styling */
+        #popupBar {
+            display: none;
+            position: fixed;
+            background-color: #333; /* Darker background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1000;
+            width: 220px; /* Increased width for better content spacing */
+            top: 45%; /* Position at the middle of the viewport */
+            transform: translateY(-50%); /* Center vertically */
+            right: 10px; /* Adjust the distance from the left side */
+            color: #fff; /* Text color */
+        }
+
+        #popupBar a {
+            display: block;
+            text-decoration: none;
+            color: #fff; /* Link color */
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        #popupBar a:hover {
+            color: #3498db; /* Hover link color */
+        }
+
+        /* Additional Styles for Profile, Campaign, and Domain Content */
+        .popupContent {
+            font-size: 14px;
+            color: #eee; /* Content text color */
+            padding-bottom: 10px; /* Add padding for better spacing */
+        }
+
+        .popupContent p {
+            margin: 10px 0;
+        }
+
+        /* Stylish icons for the popup content */
+        .popupContent p::before {
+            content: "🔹"; /* Unicode character for a small filled square */
+            margin-right: 8px; /* Adjust spacing */
         }
 
         @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
@@ -211,19 +256,110 @@
             color: #fff;
         }
 
-       
+        #language-bar {
+            background-color: #f4f4f4;
+            overflow: hidden;
+            padding: 10px;
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px; /* Added for semi-square shape */
+            border-bottom-right-radius: 15px;
+            top: 90px;
+            
+        }
+
+        #language-bar button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#language-bar button:hover {
+    background-color: #45a049;
+}
+
+    .container {
+        position: fixed;
+        top: 130px;
+        right: 20px;
+        width: calc(100% - 40px);
+        width: 1001px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 70px;
+    }
+
+    .inner-container {
+        position: fixed;
+        top: 130px;
+        left: 20px;
+        width: calc(100% - 40px);
+        width: 400px;
+        text-align: center;
+        height: 450px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 70px;
+        justify-content: center; /* Center the box horizontally */
+    align-items: center;
+          
+        }
+    textarea {
+        width: calc(100% - 20px);
+        height: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 4px;
+        resize: none;
+    }
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        overflow-y: auto;
+        max-height: 200px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #1370fc;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0b7a99;
+    }
+
+
+
     </style>
 </head>
 
 <body>
     <nav>
-        <div id="myWeb">My WEB</div>
-        <div>
-            <a href="#" class="active">Home</a>
-            <a href="#" class="active">Career</a>
-            <a href="#" class="active">Contact</a>
-            <a href="#" class="active">About</a>
+        <div id="language-bar">
+            <button onclick="selectLanguage('c')">C</button>
+            <button onclick="selectLanguage('java')">Java</button>
+            <button onclick="selectLanguage('cpp')">C++</button>
+            <button onclick="selectLanguage('python')">Python</button>
+            <button onclick="selectLanguage('python')">c#</button>
+            <button onclick="selectLanguage('python')">SQL</button>
         </div>
+        
         <div id="container">
             <div id="logo" onclick="togglePopup()">
                 <img src="pic/Ar.png" alt="Logo">
@@ -233,14 +369,25 @@
             <label for="checkbox" class="checkbox-label">
                 <i class="far fa-moon" style="color: #FFD43B;"></i>
                 <i class="fas fa-sun" style="color: #FFD43B;"></i>
-                <span class="ball"></span>
-            </label>
+                <span class="ball"></span>     
         </div>
+        
     </nav>
+    <div id="container">
+        <div class="inner-container">
+            <h3>1. How do you reverse a string in Java?</h3>
+            <p>b = b + a; // now b is sum of both the numbers
+                a = b - a; // b - a = (b + a) - a = b (a is swapped)
+                b = b - a; // (b + a) - b = a (b is swapped)</p>
+            </div>
+    <div class="container">
+        <textarea id="code" placeholder="Write your code here..."></textarea>
+        <button onclick="runTest()">Run Test</button>
+        <div id="output"></div>
+    </div>
+    
 
-   
-   
-   
+    
 
     <script>
         function toggleDarkMode() {
@@ -279,8 +426,22 @@
         })
 
         
-        
+      
+
+        function runTest() {
+    var code = document.getElementById("code").value;
+    var language = document.getElementById("language-bar").innerText;
+
+    // Simulate running code and showing output
+    var output = "Output for " + language + ":\n";
+    output += "Code: \n" + code + "\n";
+    // You can have more sophisticated logic here to actually run the code
+
+    document.getElementById("output").innerText = output;
+        }
+                 
     </script>
 </body>
 
 </html>
+

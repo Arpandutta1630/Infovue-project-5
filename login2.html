@@ -2,22 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>Time-line</title>
+    <title>Webpage Design</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        #navbar {
+
+#navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            background: -webkit-gradient(linear, left top, right top, from(#2b5876), to(#4e4376));
+            background: -o-linear-gradient(left, #2b5876, #4e4376);
             background: linear-gradient(to right, #2b5876, #4e4376);
             padding: 20px;
             color: white;
             text-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
 
         #navbar #profileLogo {
@@ -34,6 +43,8 @@
             margin: 0 15px;
             padding: 10px;
             border-radius: 5px;
+            -webkit-transition: background-color 0.3s;
+            -o-transition: background-color 0.3s;
             transition: background-color 0.3s;
         }
 
@@ -54,15 +65,18 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   --color: rgba(30, 30, 30);
   --bgColor: rgb(255, 242, 242);
   min-height: 100vh;
+  display: -ms-grid;
   display: grid;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   gap: 2rem;
   padding: 2rem;
   font-family: "Poppins", sans-serif;
@@ -78,10 +92,15 @@ ul {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: var(--line-w) var(--col-gap) 1fr;
   grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
-  column-gap: var(--col-gap);
+  -webkit-column-gap: var(--col-gap);
+     -moz-column-gap: var(--col-gap);
+          column-gap: var(--col-gap);
   list-style: none;
   width: min(60rem, 90%);
   margin-inline: auto;
@@ -90,7 +109,10 @@ ul {
 /* line */
 ul::before {
   content: "";
+  -ms-grid-column: 1;
   grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 20;
   grid-row: 1 / span 20;
   background: rgb(205, 204, 204);
   border-radius: calc(var(--line-w) / 2);
@@ -104,11 +126,17 @@ ul li:not(:last-child) {
 }
 
 ul li {
+  -ms-grid-column: 2;
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
+  -ms-grid-row-span: 2;
   grid-row: span 2;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
+  -ms-grid-rows: min-content min-content min-content;
+  grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
   grid-template-rows: min-content min-content min-content;
 }
 
@@ -124,6 +152,8 @@ ul li .date {
   font-size: 1.25rem;
   font-weight: 700;
 
+  display: -ms-grid;
+
   display: grid;
   place-content: center;
   position: relative;
@@ -136,11 +166,15 @@ ul li .date::before {
   width: var(--inlineP);
   aspect-ratio: 1;
   background: var(--accent-color);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(0, 0, 0, 0.2)), to(transparent));
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
   background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
   position: absolute;
   top: 100%;
 
-  clip-path: polygon(0 0, 100% 0, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+
+          clip-path: polygon(0 0, 100% 0, 0 100%);
   right: 0;
 }
 
@@ -154,7 +188,11 @@ ul li .date::after {
   border-radius: 50%;
   top: 50%;
 
-  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+
+      -ms-transform: translate(50%, -50%);
+
+          transform: translate(50%, -50%);
   right: calc(100% + var(--col-gap) + var(--line-w) / 2);
 }
 
@@ -167,12 +205,15 @@ ul li .descr {
 }
 ul li .title {
   overflow: hidden;
-  padding-block-start: 1.5rem;
-  padding-block-end: 1rem;
+  -webkit-padding-before: 1.5rem;
+          padding-block-start: 1.5rem;
+  -webkit-padding-after: 1rem;
+          padding-block-end: 1rem;
   font-weight: 500;
 }
 ul li .descr {
-  padding-block-end: 1.5rem;
+  -webkit-padding-after: 1.5rem;
+          padding-block-end: 1.5rem;
   font-weight: 300;
 }
 
@@ -185,8 +226,11 @@ ul li .descr::before {
   background: rgba(0, 0, 0, 0.5);
   left: 50%;
   border-radius: 50%;
-  filter: blur(4px);
-  transform: translate(-50%, 50%);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 ul li .title::before {
   bottom: calc(100% + 0.125rem);
@@ -199,30 +243,39 @@ ul li .descr::before {
 
 @media (min-width: 40rem) {
   ul {
+    -ms-grid-columns: 1fr var(--line-w) 1fr;
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
   ul::before {
+    -ms-grid-column: 2;
     grid-column: 2;
   }
   ul li:nth-child(odd) {
+    -ms-grid-column: 1;
     grid-column: 1;
   }
   ul li:nth-child(even) {
+    -ms-grid-column: 3;
     grid-column: 3;
   }
 
   /* start second card */
   ul li:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     grid-row: 2/4;
   }
 
   ul li:nth-child(odd) .date::before {
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
   ul li:nth-child(odd) .date::after {
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
   ul li:nth-child(odd) .date {
@@ -242,6 +295,8 @@ ul li .descr::before {
 ul li .title,
         ul li .descr {
             display: none; 
+            -webkit-transition: opacity 10s ease; 
+            -o-transition: opacity 10s ease; 
             transition: opacity 10s ease; 
             opacity: 0; 
         }
@@ -265,6 +320,8 @@ ul li .descr button {
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
   position: absolute; /* Added */
     right: 0; /* Added */
@@ -324,3 +381,4 @@ ul li .descr button:hover {
 </body>
 
 </html>
+

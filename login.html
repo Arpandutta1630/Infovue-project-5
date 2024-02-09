@@ -2,17 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>Login-Page</title>
+    <title>Webpage Design</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        * {
+
+* {
             margin: 0;
             padding: 0;
         }
 
         .main {
             width: 100%;
+            background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, 0.5)), color-stop(50%, rgba(0, 0, 0, 0.5))), url(pic/1.jpg);
+            background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(pic/1.jpg);
             background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(pic/1.jpg);
             background-position: center;
             background-size: cover;
@@ -49,9 +52,15 @@
 
         ul {
             float: left;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
 
         ul li {
@@ -66,6 +75,8 @@
             color: #fff;
             font-family: Arial;
             font-weight: bold;
+            -webkit-transition: 0.4s ease-in-out;
+            -o-transition: 0.4s ease-in-out;
             transition: 0.4s ease-in-out;
         }
 
@@ -105,6 +116,8 @@
             font-size: 15px;
             border-bottom-right-radius: 5px;
             border-bottom-right-radius: 5px;
+            -webkit-transition: 0.2s ease;
+            -o-transition: 0.2s ease;
             transition: 0.2s ease;
             cursor: pointer;
         }
@@ -155,12 +168,16 @@
             font-size: 18px;
             border-radius: 10px;
             cursor: pointer;
+            -webkit-transition: .4s ease;
+            -o-transition: .4s ease;
             transition: .4s ease;
         }
 
         .content .cn a {
             text-decoration: none;
             color: #000;
+            -webkit-transition: .3s ease;
+            -o-transition: .3s ease;
             transition: .3s ease;
         }
 
@@ -176,13 +193,18 @@
         .form {
             width: 299px;
             height: 420px;
+            background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, 0.8)), color-stop(50%, rgba(0, 0, 0, 0.8)));
+            background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 50%);
             background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 50%);
             position: absolute;
             top: -20px;
             left: 870px;
-            transform: translate(0%, -5%);
+            -webkit-transform: translate(0%, -5%);
+                -ms-transform: translate(0%, -5%);
+                    transform: translate(0%, -5%);
             border-radius: 10px;
             padding: 25px;
+            border-radius: 10% 20%;
         }
 
         .form h2 {
@@ -216,6 +238,26 @@
             outline: none;
         }
 
+        ::-webkit-input-placeholder {
+            color: #fff;
+            font-family: Arial;
+        }
+
+        ::-moz-placeholder {
+            color: #fff;
+            font-family: Arial;
+        }
+
+        :-ms-input-placeholder {
+            color: #fff;
+            font-family: Arial;
+        }
+
+        ::-ms-input-placeholder {
+            color: #fff;
+            font-family: Arial;
+        }
+
         ::placeholder {
             color: #fff;
             font-family: Arial;
@@ -231,6 +273,8 @@
             border-radius: 10px;
             cursor: pointer;
             color: #fff;
+            -webkit-transition: 0.4s ease;
+            -o-transition: 0.4s ease;
             transition: 0.4s ease;
         }
 
@@ -273,6 +317,8 @@
             font-size: 30px;
             padding-left: 14px;
             padding-top: 5px;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
             transition: 0.3s ease;
         }
 
@@ -287,8 +333,12 @@
         }
 
         .tacbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; 
-    align-items: center; 
+    -webkit-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center; 
     padding-top: 8px; 
 }
 
@@ -307,7 +357,6 @@
     cursor: pointer;
 }
  
-
 
 
 
